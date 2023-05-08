@@ -14,17 +14,12 @@ import java.util.stream.Collectors;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
-    @Column(name = "Name")
     private String name;
-    @Column(name = "Last_name")
     private String lastName;
-    @Column(name = "Age")
     private int age;
     @Column(name = "email")
     private String userName;
-    @Column(name = "Password")
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles",
@@ -34,6 +29,7 @@ public class User implements UserDetails {
 
     public User() {
     }
+
     public User(Long id, String name, String lastName, int age, String userName, String password, Set<Role> roles) {
         this.id = id;
         this.name = name;
@@ -88,6 +84,7 @@ public class User implements UserDetails {
     public void setAge(int age) {
         this.age = age;
     }
+
     public String getUserName() {
         return userName;
     }

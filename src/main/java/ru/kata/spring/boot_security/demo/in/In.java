@@ -9,7 +9,6 @@ import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.repositories.RoleJpaRep;
 import ru.kata.spring.boot_security.demo.repositories.UserJpaRep;
 
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,8 +38,8 @@ public class In implements CommandLineRunner {
 
 
         // пользователи Admin  и User
-        User userAdmin = new User(1l,"Kirill", "Yuni", 10,"admin", passwordEncoder.encode("admin"), adminRoles);
-        User userUser = new User(2l, "Regina", "Uni", 25, "user", passwordEncoder.encode("user"), userRoles);
+        User userAdmin = new User(1l, "Kirill", "Yuni", 10, "admin", passwordEncoder.encode("admin"), adminRoles);
+        User userUser = new User(2l, "Regina", "Uni", 25, "user@ya.ru", passwordEncoder.encode("user"), userRoles);
         System.out.println(userAdmin);
         userJpaRep.save(userAdmin);
         System.out.println(userUser);
